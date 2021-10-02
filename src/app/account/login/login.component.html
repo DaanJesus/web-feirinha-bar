@@ -1,0 +1,32 @@
+<div id="back">
+    <canvas id="canvas" class="canvas-back"></canvas>
+    <div class="backLeft">
+    </div>
+</div>
+
+<div id="slideBox">
+    <div class="topLayer">
+        <div class="right">
+            <div class="content">
+                <h2>Login</h2>
+                <form id="form-login" [formGroup]="formLogin">
+                    <div class="form-element form-stack">
+                        <mat-form-field appearance="legacy">
+                            <mat-label>EMAIL</mat-label>
+                            <input matInput id="username-login" type="text" formControlName="email" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-element form-stack">
+                        <mat-form-field appearance="legacy">
+                            <mat-label>SENHA</mat-label>
+                            <input matInput id="password-login" type="password" formControlName="password" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-element form-submit">
+                        <button id="logIn" class="login" [disabled]="formLogin.invalid" (click)="login()" name="login">Log In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
