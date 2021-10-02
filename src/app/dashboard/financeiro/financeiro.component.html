@@ -1,0 +1,308 @@
+<!-- <div class="container">
+
+  <div class="pagamento">
+    <div class="card-header">
+      <h2>
+        PAGAMENTO TOTAL REALIZADO
+      </h2>
+    </div>
+    <div class="card-body">
+      <h2>R$ 2.964,97</h2>
+    </div>
+  </div>
+
+  <div class="layout-1">
+
+    <div class="adiantamento">
+      <div class="card-header-adiantamento">
+        <h2>
+          ADIANTAMENTO
+        </h2>
+      </div>
+      <div class="card-body-adiantamento">
+        <h2>R$ 1.020,00</h2>
+      </div>
+    </div>
+    
+    <div class="gorjeta">
+      <div class="card-header-gorjeta">
+        <h2>
+          GORJETA PERÍODO
+        </h2>
+      </div>
+      <div class="card-body-gorjeta">
+        <h2>R$ 1.334,97</h2>
+      </div>
+    </div>
+
+    <div class="faltas">
+      <div class="card-header-falta">
+        <h2>
+          FALTAS
+        </h2>
+      </div>
+      <div class="card-body-falta">
+        <h2>2</h2>
+      </div>
+    </div>
+
+    <div class="folgas">
+      <div class="card-header-folga">
+        <h2>
+          FOLGAS
+        </h2>
+      </div>
+      <div class="card-body-folga">
+        <h2>0</h2>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="layout-1">
+
+    <div class="vt">
+      <div class="card-header-vt">
+        <h2>
+          VT
+        </h2>
+      </div>
+      <div class="card-body-vt">
+        <h2>R$ 440,00</h2>
+      </div>
+    </div>
+    
+    <div class="vr">
+      <div class="card-header-vr">
+        <h2>
+          VR
+        </h2>
+      </div>
+      <div class="card-body-vr">
+        <h2>R$ 170,00</h2>
+      </div>
+    </div>
+
+    <div class="feriados-trabalhados">
+      <div class="card-header-feriados">
+        <h2>
+          FERIADOS TRABALHADOS
+        </h2>
+      </div>
+      <div class="card-body-feriados">
+        <h2>0</h2>
+      </div>
+    </div>
+    
+  </div>
+  
+</div> -->
+
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-lg-6 col-md-12">
+        <div class="card card-stats">
+          <div class="card-header card-header-success card-header-icon">
+            <div class="card-icon">
+              <!-- <i class="material-icons">content_copy</i> -->
+              <span>PAGAMENTO TOTAL REALIZADO</span>
+            </div>
+            <h3 class="card-title">{{pagamento_total}}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">local_offer</i> Líquido folha + VR + VT
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-info card-header-icon">
+            <div class="card-icon">
+              <span>ADIANTAMENTO</span>
+            </div>
+            <h3 class="card-title">{{adiantamento}}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">date_range</i> Recebimento dia 15 de cada mês
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-info card-header-icon">
+            <div class="card-icon">
+              <span>GORJETA PERÍODO</span>
+            </div>
+            <h3 class="card-title">{{gorjeta}}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats" style="font-size: 11px;">
+              <i class="material-icons">local_offer</i>
+              Calc = pontuação * cargo * caixinha - faltas | (Incluso desc. de 27,5%)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-info card-header-icon">
+            <div class="card-icon">
+              <div>FERIADOS TRABALHADOS</div>
+            </div>
+            <h3 class="card-title">{{userObject.feriado_trabalhado}}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-1 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-info card-header-icon">
+            <div class="card-icon">
+              <div>FALTAS</div>
+            </div>
+            <h3 class="card-title">{{userObject.faltas}}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-info card-header-icon">
+            <div class="card-icon">
+              <div>FOLGAS DISPONÍVEIS</div>
+            </div>
+            <h3 class="card-title">{{userObject.folgas}}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-info card-header-icon">
+            <div class="card-icon">
+              <div>VT</div>
+            </div>
+            <h3 class="card-title">{{vt}}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-info card-header-icon">
+            <div class="card-icon">
+              <div>VR</div>
+            </div>
+            <h3 class="card-title">{{vr}}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <div class="card">
+          <div class="card-header card-header-info card-header-icon">
+            <div class="card-icon">
+              <span>OBSERVAÇÕES GERAIS</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <mat-form-field appearance="standard" style="margin-top: -3px">
+              <mat-label>Buscar</mat-label>
+              <input matInput (keyup)="searchTerm.next($event.target.value)" #input>
+            </mat-form-field>
+
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" style="width: 100%;" matSort>
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                  <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+                </ng-container>
+
+                <!-- Progress Column -->
+                <ng-container matColumnDef="progress">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
+                  <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                  <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+                </ng-container>
+
+                <!-- Fruit Column -->
+                <ng-container matColumnDef="fruit">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Fruit </th>
+                  <td mat-cell *matCellDef="let row"> {{row.fruit}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">Nenhum resultado para "{{input.value}}"</td>
+                </tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5]" aria-label="Select page of users"></mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-6 col-md-12">
+        <div class="card">
+          <div class="card-header card-header-info card-header-icon">
+            <div class="card-icon">
+              <span>GORJETA POR SEMANA</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <canvas id="myCanvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

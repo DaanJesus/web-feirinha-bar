@@ -1,0 +1,79 @@
+<div class="sidebar">
+    <div class="logo_content">
+        <div class="logo">
+            <!-- <img class="image_logo"> -->
+            <!-- <i class='bx bx-beer'></i> -->
+            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+                <path
+                    style="stroke: rgb(255, 255, 255); fill-rule: nonzero; fill: rgb(255, 255, 255); paint-order: fill;"
+                    d="M 214.007 183.611 L 213.478 342.735 C 212.181 355.534 198.55 384.793 173.831 402.589 L 150.395 373.716 L 151.105 287.746 L 104.061 328.623 L 187.576 429.842 C 210.946 459.524 171.494 508.541 132.648 478.988 L 26.579 342.88 C 21.433 337.207 5.122 319.104 24.08 297.814 L 164.002 183.906 L 214.007 183.611 Z"
+                    bx:origin="11.628198 0.301421" />
+                <path
+                    style="stroke: rgb(255, 255, 255); fill-rule: nonzero; fill: rgb(255, 255, 255); paint-order: fill;"
+                    d="M 235.192 183.572 L 307.337 182.799 L 307.337 279.724 C 306.493 309.457 242.046 313.708 233.934 279.724 L 235.192 183.572 Z"
+                    bx:origin="28.521923 0.766266" />
+                <path
+                    style="stroke: rgb(255, 255, 255); fill-rule: nonzero; fill: rgb(255, 255, 255); paint-order: fill;"
+                    d="M 270.848 8.128 C 386.894 8.133 387.185 174.347 271.688 174.175 C 152.564 174.001 153.179 8.123 270.848 8.128 Z"
+                    bx:origin="12.213962 1.609602" />
+                <path
+                    style="stroke: rgb(255, 255, 255); fill-rule: nonzero; fill: rgb(255, 255, 255); paint-order: fill;"
+                    d="M 326.84 358.923 L 326.072 182.272 L 384.285 182.272 L 384.672 215.062 L 360.539 237.274 L 360.925 413.574 L 372.458 423.673 L 393.227 423.994 L 393.261 442.773 C 353.58 443.045 325.689 378.55 326.84 358.923 Z"
+                    bx:origin="29.788604 0.357491" />
+                <path style="fill: rgb(216, 216, 216); stroke: rgb(255, 255, 255);" d="M 80.418 48.272" />
+                <path
+                    style="stroke: rgb(255, 255, 255); fill-rule: nonzero; fill: rgb(255, 255, 255); paint-order: fill;"
+                    d="M 394.186 140.863 L 392.808 219.308 L 369.071 240.769 L 368.966 410.365 L 376.183 416.617 L 449.615 416.227 L 458.104 409.974 L 457.646 364.548 C 382.482 364.776 382.339 266.789 456.831 266.17 L 456.831 240.962 L 439.003 219.668 L 436.242 140.96 L 394.186 140.863 Z"
+                    bx:origin="21.972603 0.487883" />
+                <path
+                    style="stroke: rgb(255, 255, 255); fill-rule: nonzero; fill: rgb(255, 255, 255); paint-order: fill;"
+                    d="M 452.286 274.591 C 509.904 273.783 508.826 357.211 452.677 356.627 C 395.808 356.035 394.94 275.395 452.286 274.591 Z"
+                    bx:origin="22.433085 0.009917" />
+            </svg>
+            <div class="logo_name">FEIRINHA*</div>
+        </div>
+        <i class='bx bx-menu' (click)="setColorFoto()" id="btn"></i>
+    </div>
+
+    <nav class="nav_list">
+        <a *ngFor="let item of routes" class="items">
+            <i [class]="item.icon" [routerLink]='item.link'></i>
+            <span class="links_name" [routerLink]='item.link'>{{item.path}}</span>
+            <span class="tooltip">{{item.path}}</span>
+        </a>
+    </nav>
+
+    <div class="profile_content">
+        <div class="profile">
+            <div class="profile_details">
+                <div class="profile_img">
+                    <span [style]="{'color': color}">{{nome_foto}}</span>
+                </div>
+                <div class="name_job">
+                    <div class="name">{{user.name}}</div>
+                    <div class="job">{{user.cargo}}</div>
+                </div>
+            </div>
+            <i class="bx bx-log-out" id="log_out" (click)="ngOnDestroy()"></i>
+            <span class="tooltip">Sair</span>
+        </div>
+    </div>
+
+</div>
+<div class="home_content">
+
+    <div class="main-container">
+        <div class="header">
+            <div class="route">
+                {{currentRoute(activeLink.url)}}
+            </div>
+            <div class="user-info">
+                <div class="hour" id="hour">{{hour}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="body">
+        <router-outlet></router-outlet>
+    </div>
+</div>
