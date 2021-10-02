@@ -1,0 +1,555 @@
+.body {
+    top: 55px;
+    overflow: scroll;
+    position: fixed;
+    bottom: 0;
+}
+
+/*--------------
+ -----Scroll----
+ --------------*/
+
+::-webkit-scrollbar-track {
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #1c66b6;
+}
+
+/* @-ms-viewport {
+    width: device-width;
+} */
+
+@media(max-width: 576px) {
+    .sidebar {
+        width: 0px!important;
+        left: -54px!important;
+    }
+    .route {
+        display: none;
+    }
+    .home_content {
+        overflow: hidden;
+        display: flex;
+        box-sizing: border-box!important;
+        width: calc(100%)!important;
+        left: 0px!important;
+        transition: all 0.5s ease;
+    }
+    .home_content .main-container {
+        position: relative;
+        height: 50px;
+        margin-left: 5px;
+        width: calc(100%)!important;
+        max-width: 576px!important;
+        -webkit-animation: top 1s both;
+        animation: top 1s both;
+    }
+
+    .sidebar #btn {
+        left: 60px!important;
+        color: rgb(54, 54, 54)!important;
+        font-size: 28px;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        line-height: 40px;
+        transform: translateX(-50%);
+        cursor: pointer;
+        -webkit-animation: top 1s both;
+        animation: top 1s both;
+    }
+
+    .active {
+        width: 200px!important;
+        left: 0px!important;
+    }
+
+    .active #btn {
+        left: 78%!important;
+        color: white!important;
+        transition: all 0.3s ease;
+    }
+}
+
+@media(min-width: 577px) {
+    .main-container .header #btn {
+        display: none;
+    }
+}
+
+/*--------------
+ ----SideBar----
+ --------------*/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 54px;
+    background: #0751A0;
+    padding: 6px 14px;
+    box-shadow: 8px -5px 7px -4px rgb(0, 0, 0, 0.43);
+    transition: all 0.5s ease;
+    z-index: 10;
+}
+
+.active {
+    width: 200px;
+}
+
+.sidebar .logo_content .logo {
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 0;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.active .logo_content .logo {
+    opacity: 1;
+    width: 200px;
+    pointer-events: none;
+}
+
+.sidebar .logo_content .logo svg {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+.sidebar .logo_content .logo .logo_name {
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.sidebar #btn {
+    position: absolute;
+    color: #fff;
+    left: 50%;
+    top: 6px;
+    font-size: 28px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.active #btn {
+    left: 90%;
+}
+
+.sidebar .nav_list {
+    margin-top: 20px;
+}
+
+.sidebar nav a {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+}
+
+.sidebar nav a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+}
+
+.sidebar nav a .tooltip {
+    position: absolute;
+    left: 70px;
+    top: 0;
+    transform: translateY(-50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background: rgb(255, 255, 255);
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+}
+
+.active nav a .tooltip {
+    display: none;
+}
+
+.sidebar nav a:hover .tooltip {
+    transition: all 0.5s ease;
+    top: 50%;
+    opacity: 1;
+    color: #000;
+}
+
+.profile .tooltip {
+    position: absolute;
+    left: 85px;
+    top: 0;
+    transform: translateY(-50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background: rgb(255, 255, 255);
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+}
+
+.active .profile .tooltip {
+    display: none;
+}
+
+.sidebar .profile:hover .tooltip {
+    transition: all 0.5s ease;
+    top: 43%;
+    opacity: 1;
+    color: #000;
+}
+
+.sidebar nav a:hover {
+    cursor: pointer;
+    background: #fff;
+    color: #0751A0;
+}
+
+.sidebar nav a i {
+    height: 50px;
+    min-width: 55px;
+    border-radius: 12px;
+    line-height: 50px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.sidebar .links_name {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.active .links_name {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar .profile_content {
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sidebar .profile_content .profile {
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background: none;
+    transition: all 0.4s ease;
+}
+
+.active .profile_content .profile {
+    background: #1e7adb;
+}
+
+.profile_content .profile .profile_details {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: all 0.4s ease;
+}
+
+.active .profile .profile_details {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.profile .profile_details .profile_img {
+    position: relative;
+    height: 45px;
+    width: 45px;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.profile_details .profile_img span {
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    position: absolute;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.profile .profile_details .name_job {
+    margin-left: 10px;
+}
+
+.profile .profile_details .name {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.profile .profile_details .job {
+    font-size: 12px;
+}
+
+.profile #log_out {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    background: #1e7adb;
+}
+
+.active .profile #log_out {
+    left: 88%;
+}
+
+.active .profile #log_out {
+    background: none;
+}
+
+/*--------------
+ -----NavBar----
+ --------------*/
+
+@-webkit-keyframes left {
+    0% {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes left {
+    0% {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@-webkit-keyframes top {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes top {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    padding-left: 0;
+}
+
+.header {
+    height: 50px;
+    background: #ffffff;
+    background: radial-gradient(circle, #ffffff 0%, #fafafa 100%);
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+    padding: 0 30px;
+    -webkit-animation: top 1s both;
+    animation: top 1s both;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.header-link {
+    color: #9b9ca7;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    transition: 0.3s;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s;
+}
+
+.header-link svg {
+    width: 20px;
+    margin-right: 14px;
+}
+
+.header-link.active, .header-link:hover {
+    background: #11132c;
+    border-bottom: 3px solid #4255d4;
+}
+
+.user-info {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.user-info svg {
+    width: 20px;
+}
+
+.user-info .profile {
+    margin: 0 20px 0 12px;
+    width: 18px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    color: #9b9ca7;
+    background: #1a1b3c;
+    border: none;
+    padding: 2px 12px;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+
+.button svg {
+    margin-left: 10px;
+    width: 16px;
+}
+
+.user-box {
+    margin-top: 25px;
+    display: flex;
+}
+
+.user-box+.user-box {
+    margin-top: 20px;
+}
+
+.user-box+.user-box .cards-wrapper {
+    margin-left: 0;
+    flex-grow: 1;
+    max-width: none;
+}
+
+.user-box+.user-box .today {
+    margin-left: 30px;
+}
+
+.user-box+.user-box .cards-header {
+    padding: 20px 30px;
+    justify-content: space-between;
+}
+
+.user-box .cards-header, .user-box .cards-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-box .cards-header svg, .user-box .cards-view svg {
+    width: 24px;
+}
+
+.user-box .cards-header .title, .user-box .cards-view .title {
+    margin: 0 16px;
+    font-size: 15px;
+}
+
+.user-box .cards-header-date svg, .user-box .cards-view-date svg {
+    width: 30px;
+}
+
+.user-box .cards-header .cards-button, .user-box .cards-view .cards-button {
+    background: #15193c;
+    padding: 10px 16px;
+    margin-right: 0;
+}
+
+.user-box .cards-header .cards-button svg, .user-box .cards-view .cards-button svg {
+    width: 16px;
+    margin: 0 2px 0 0;
+}
+
+.user-box .cards-header .date-wrapper, .user-box .cards-view .date-wrapper {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.user-box .cards-header .date-wrapper .title, .user-box .cards-view .date-wrapper .title {
+    margin: 0 16px;
+}
+
+/*--------------
+ ------Home------
+ --------------*/
+
+.home_content {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 85px);
+    left: 85px;
+    transition: all 0.5s ease;
+}
+
+.main-container .header .route {
+    font-weight: bold;
+}
+
+.home_content .body {
+    margin: 5px;
+}
+
+.active~.home_content {
+    width: calc(100% - 240px);
+    left: 240px;
+}
